@@ -1,0 +1,897 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0d1733;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FONDO DE ESTRELLAS
+========================================= */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+body::before {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(169, 214, 229, .18) 0 1px, transparent 2px),
+        radial-gradient(circle at 80% 15%, rgba(255, 248, 231, .8) 0 1px, transparent 2px),
+        radial-gradient(circle at 45% 70%, rgba(232, 212, 154, .7) 0 1px, transparent 2px),
+        radial-gradient(circle at 90% 80%, rgba(169, 214, 229, .7) 0 1px, transparent 2px),
+        radial-gradient(circle at 25% 90%, rgba(255, 255, 255, .7) 0 1px, transparent 2px);
+
+    background-size: 180px 180px;
+    animation: estrellas 15s linear infinite;
+}
+
+body::after {
+    background:
+        radial-gradient(circle at 30% 40%, rgba(255,255,255,.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 60%, rgba(232,212,154,.7) 0 1px, transparent 2px);
+
+    background-size: 240px 240px;
+    animation: estrellas 25s linear infinite reverse;
+}
+
+@keyframes estrellas {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-180px);
+    }
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.pantalla {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    background:
+        radial-gradient(circle at center, rgba(50, 84, 150, .35), transparent 50%);
+}
+
+.seccion {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.oculto {
+    display: none;
+}
+
+
+/* =========================================
+   LUNA
+========================================= */
+
+.luna {
+    position: absolute;
+    top: 10%;
+    right: 12%;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: #fff8e7;
+    box-shadow:
+        0 0 25px rgba(255, 248, 231, .6),
+        0 0 60px rgba(169, 214, 229, .25);
+}
+
+.luna::after {
+    content: "";
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: #0d1733;
+    left: 28px;
+    top: -10px;
+}
+
+
+/* =========================================
+   BIENVENIDA
+========================================= */
+
+.bienvenida-contenido {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.corazon {
+    font-size: 70px;
+    color: #a9d6e5;
+    margin-bottom: 15px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.pequeno {
+    color: #e8d49a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.bienvenida-contenido h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(55px, 10vw, 90px);
+    font-weight: 400;
+    color: #fff8e7;
+    margin-bottom: 20px;
+}
+
+.texto-bienvenida {
+    font-size: 19px;
+    color: #c8d8ef;
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton-principal,
+.boton-whatsapp {
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.boton-principal {
+    background: #a9d6e5;
+    color: #12203f;
+    padding: 14px 35px;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(169, 214, 229, .25);
+}
+
+.boton-principal:hover {
+    transform: translateY(-4px);
+    background: #fff8e7;
+    box-shadow: 0 12px 35px rgba(255, 248, 231, .25);
+}
+
+
+/* =========================================
+   TÍTULOS
+========================================= */
+
+.titulo-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion span {
+    color: #e8d49a;
+    font-size: 18px;
+}
+
+.titulo-seccion h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(35px, 6vw, 55px);
+    font-weight: 400;
+    color: #fff8e7;
+}
+
+.descripcion {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    color: #c8d8ef;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.sobre {
+    width: 300px;
+    height: 190px;
+    background: #a9d6e5;
+    margin: 40px auto;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #17294f;
+    transition: .4s;
+}
+
+.sobre:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+.sobre-solapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 100px solid #8fc3d5;
+}
+
+.corazon-sobre {
+    font-size: 45px;
+    margin-top: 25px;
+    z-index: 2;
+}
+
+.sobre p {
+    z-index: 2;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.carta {
+    max-width: 700px;
+    margin: 30px auto;
+    animation: aparecer .8s ease;
+}
+
+.hoja {
+    background: #fff8e7;
+    color: #30323a;
+    padding: 55px 45px;
+    border-radius: 4px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, .3);
+    position: relative;
+    text-align: left;
+    line-height: 1.9;
+}
+
+.hoja h3 {
+    text-align: center;
+    color: #263d70;
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.hoja p {
+    margin-bottom: 18px;
+}
+
+.decoracion {
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    color: #c6a15b;
+}
+
+.firma {
+    text-align: right;
+    color: #263d70;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.foto {
+    height: 260px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(232, 212, 154, .35);
+    background: #182b59;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+    transition: .4s;
+}
+
+.foto:hover {
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+
+.foto:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   LÍNEA DE AMOR
+========================================= */
+
+.linea-tiempo {
+    max-width: 750px;
+    margin: 60px auto;
+    position: relative;
+}
+
+.linea-tiempo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #a9d6e5,
+        #e8d49a,
+        #a9d6e5,
+        transparent
+    );
+    transform: translateX(-50%);
+}
+
+.momento {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    margin-bottom: 45px;
+}
+
+.momento:nth-child(even) {
+    margin-left: 50%;
+    justify-content: flex-end;
+}
+
+.punto {
+    position: absolute;
+    right: -16px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #182b59;
+    border: 2px solid #e8d49a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e8d49a;
+    z-index: 2;
+}
+
+.momento:nth-child(even) .punto {
+    left: -16px;
+}
+
+.tarjeta-tiempo {
+    width: 85%;
+    padding: 22px;
+    background: rgba(24, 43, 89, .8);
+    border: 1px solid rgba(169, 214, 229, .25);
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+}
+
+.tarjeta-tiempo span {
+    color: #e8d49a;
+    font-size: 13px;
+}
+
+.tarjeta-tiempo h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 27px;
+    font-weight: 400;
+    color: #fff8e7;
+    margin: 5px 0;
+}
+
+.tarjeta-tiempo p {
+    color: #c8d8ef;
+    font-size: 14px;
+}
+
+.tarjeta-tiempo.especial {
+    border-color: #e8d49a;
+    background: rgba(38, 61, 112, .9);
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-contenedor {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    background: rgba(255, 248, 231, .08);
+    border: 1px solid rgba(232, 212, 154, .3);
+    border-radius: 18px;
+}
+
+.video-contenedor video {
+    width: 100%;
+    max-height: 600px;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/* =========================================
+   MENSAJE
+========================================= */
+
+.mensaje-caja {
+    max-width: 650px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(169, 214, 229, .25);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .2);
+}
+
+.corazon-mensaje {
+    font-size: 45px;
+    color: #a9d6e5;
+    margin-bottom: 20px;
+}
+
+.mensaje-caja textarea {
+    width: 100%;
+    min-height: 180px;
+    resize: vertical;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(232, 212, 154, .4);
+    background: #fff8e7;
+    color: #30323a;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.boton-whatsapp {
+    background: #a9d6e5;
+    color: #12203f;
+    padding: 14px 28px;
+    border-radius: 30px;
+}
+
+.boton-whatsapp:hover {
+    transform: translateY(-3px);
+    background: #fff8e7;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+    background: rgba(0, 0, 0, .15);
+}
+
+footer .estrellita {
+    color: #e8d49a;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #fff8e7;
+}
+
+footer span {
+    color: #8fa7cc;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .luna {
+        width: 65px;
+        height: 65px;
+        right: 8%;
+    }
+
+    .luna::after {
+        width: 65px;
+        height: 65px;
+        left: 20px;
+    }
+
+    .bienvenida-contenido h1 {
+        font-size: 55px;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .foto {
+        height: 190px;
+    }
+
+    .hoja {
+        padding: 35px 25px;
+    }
+
+    .linea-tiempo::before {
+        left: 15px;
+    }
+
+    .momento,
+    .momento:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 45px;
+        justify-content: flex-start;
+    }
+
+    .punto,
+    .momento:nth-child(even) .punto {
+        left: 0;
+        right: auto;
+    }
+
+    .tarjeta-tiempo {
+        width: 100%;
+    }
+
+    .mensaje-caja {
+        padding: 22px;
+    }
+
+}
+/* =========================================
+   CUADROS DE LA LÍNEA DE AMOR COMO BOTONES
+========================================= */
+
+.boton-momento {
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: inherit;
+}
+
+.boton-momento .tarjeta-tiempo {
+    transition: .35s;
+}
+
+.boton-momento:hover .tarjeta-tiempo {
+    transform: scale(1.025);
+    border-color: rgba(232, 212, 154, .65);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .3);
+}
+
+.boton-momento:active .tarjeta-tiempo {
+    transform: scale(.98);
+}
+
+
+/* =========================================
+   RECUERDOS DEL MOMENTO
+========================================= */
+
+.recuerdos-momento {
+    max-width: 1000px;
+    margin: 60px auto 20px;
+    padding: 35px 20px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(232, 212, 154, .25);
+    border-radius: 22px;
+    animation: aparecer .7s ease;
+}
+
+.titulo-recuerdos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.titulo-recuerdos span {
+    color: #e8d49a;
+}
+
+.titulo-recuerdos h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #fff8e7;
+}
+
+
+/* =========================================
+   GALERÍA DEL MOMENTO
+========================================= */
+
+.galeria-momento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.foto-momento {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(232, 212, 154, .3);
+    background: #182b59;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+    animation: aparecerFoto .6s ease both;
+}
+
+.foto-momento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+
+.foto-momento:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   BOTÓN CERRAR
+========================================= */
+
+.cerrar-recuerdos {
+    margin-top: 30px;
+    border: 1px solid rgba(232, 212, 154, .4);
+    background: transparent;
+    color: #fff8e7;
+    padding: 11px 25px;
+    border-radius: 25px;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.cerrar-recuerdos:hover {
+    background: #a9d6e5;
+    color: #12203f;
+}
+
+
+/* =========================================
+   ANIMACIÓN DE FOTOS
+========================================= */
+
+@keyframes aparecerFoto {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    .galeria-momento {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .foto-momento {
+        height: 190px;
+    }
+
+    .recuerdos-momento {
+        padding: 25px 12px;
+    }
+
+}
+/* ================================
+   PANTALLA DE ACCESO
+================================ */
+
+.pantalla-acceso {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        radial-gradient(circle at top, rgba(100, 80, 180, 0.35), transparent 40%),
+        linear-gradient(135deg, #080b2b, #151044, #21154d);
+
+    overflow-y: auto;
+}
+
+.caja-acceso {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
+
+    text-align: center;
+    color: white;
+}
+
+.caja-acceso h1 {
+    margin-bottom: 12px;
+}
+
+.texto-acceso {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.pregunta {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.pregunta label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.pregunta input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.caja-acceso button {
+    margin-top: 10px;
+
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #24154d;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.caja-acceso button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.25);
+}
+
+#mensaje-acceso {
+    margin-top: 18px;
+    font-weight: bold;
+    min-height: 24px;
+}

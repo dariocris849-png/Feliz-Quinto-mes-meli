@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 💙</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+    <!-- PANTALLA DE ACCESO -->
+<div id="pantalla-acceso" class="pantalla-acceso">
+
+    <div class="caja-acceso">
+
+        <h1>Bienvenida, mi pequeña Meli ❤️</h1>
+
+        <p class="texto-acceso">
+            otro mes cumplido mi vida y otro mes que iniciaremos,
+            responde correctamente mi niña para poder entrar. ✨
+        </p>
+
+        <div class="pregunta">
+            <label for="nombre">¿Cuál es tu nombre completo?</label>
+            <input type="text" id="nombre" placeholder="Escribe tu nombre">
+        </div>
+
+        <div class="pregunta">
+            <label for="lugar">¿Dónde nos vimos por primera vez?</label>
+            <input type="text" id="lugar" placeholder="Escribe tu respuesta">
+        </div>
+
+        <div class="pregunta">
+            <label for="fecha">¿Qué número es nuestra fecha?</label>
+            <input type="text" id="fecha" placeholder="Escribe el número">
+        </div>
+
+        <div class="pregunta">
+            <label for="color">¿Cuál es tu color favorito?</label>
+            <input type="text" id="color" placeholder="Escribe tu color favorito">
+        </div>
+
+        <button onclick="verificarAcceso()">
+            Entrar a nuestra historia ❤️
+        </button>
+
+        <p id="mensaje-acceso"></p>
+
+    </div>
+
+</div>
+
+    <!-- =========================================
+         MÚSICA DE FONDO
+    ========================================== -->
+
+    <audio id="musica" loop>
+
+        <source src="audio/instrumental.mpeg" type="audio/mpeg">
+
+        Tu navegador no puede reproducir este audio.
+
+    </audio>
+
+
+    <!-- ESTRELLAS -->
+
+    <div class="estrellas"></div>
+
+
+    <!-- =========================================
+         BIENVENIDA
+    ========================================== -->
+
+    <section id="bienvenida" class="pantalla">
+
+        <div class="luna"></div>
+
+        <div class="bienvenida-contenido">
+
+            <div class="corazon">♡</div>
+
+            <p class="pequeno">
+                Para alguien muy especial
+            </p>
+
+            <h1>
+                Bienvenida 💙
+            </h1>
+
+            <p class="texto-bienvenida">
+                Preparé algo pequeñito para ti...
+            </p>
+
+            <button
+                class="boton-principal"
+                onclick="comenzar()"
+            >
+                Comenzar ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CARTA
+    ========================================== -->
+
+    <section id="carta" class="seccion oculto">
+
+        <div class="titulo-seccion">
+
+            <span>✦</span>
+
+            <h2>Carta</h2>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <div
+            class="sobre"
+            onclick="abrirCarta()"
+        >
+
+            <div class="sobre-solapa"></div>
+
+            <div class="corazon-sobre">
+                ♡
+            </div>
+
+            <p>
+                Toca para abrir
+            </p>
+
+        </div>
+
+
+        <div
+            id="contenido-carta"
+            class="carta oculto"
+        >
+
+            <div class="hoja">
+
+                <span class="decoracion">
+                    ✦
+                </span>
+
+                <h3>
+                    Para ti 💙
+                </h3>
+
+                <p>
+                    Desde que llegaste a mi vida, muchas cosas
+                    comenzaron a sentirse diferentes.
+                </p>
+
+                <p>
+                    Poco a poco te convertiste en una persona
+                    muy especial para mí y en alguien con quien
+                    quiero seguir compartiendo muchos momentos.
+                </p>
+
+                <p>
+                    Gracias por cada sonrisa, cada conversación,
+                    cada recuerdo y cada pequeño momento que
+                    hemos compartido.
+                </p>
+
+                <p>
+                    Espero que este pequeño detalle te recuerde
+                    lo mucho que significas para mí.
+                </p>
+
+                <p>
+                    Gracias por cada dia cada mes cada minuto asta
+                    cada segundo junto a ti,compartimos y creamos 
+                    un capitulo mas de  nuestra historia 
+                    que jamas quiero terminar.
+                </p>
+
+                <p class="firma">
+                    Con mucho cariño 💙
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NUESTRA LÍNEA DE AMOR
+    ========================================== -->
+
+    <section
+        id="linea"
+        class="seccion oculto"
+    >
+
+        <div class="titulo-seccion">
+
+            <span>✦</span>
+
+            <h2>
+                Nuestra Línea de Amor
+            </h2>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <p class="descripcion">
+
+            Cada momento guarda recuerdos que merecen
+            volver a ser vistos. 💙✨
+
+        </p>
+
+
+        <div class="linea-tiempo">
+
+
+            <!-- 5 DE MAYO -->
+
+            <div class="momento">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('mayo')"
+                >
+
+                    <div class="punto">
+                        ♡
+                    </div>
+
+                    <div class="tarjeta-tiempo">
+
+                        <span>
+                            ✨ 5 de mayo de 2026
+                        </span>
+
+                        <h3>
+                            El comienzo
+                        </h3>
+
+                        <p>
+                            El día que comenzó nuestra historia.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- 5 DE JUNIO -->
+
+            <div class="momento">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('junio')"
+                >
+
+                    <div class="punto">
+                        ♡
+                    </div>
+
+                    <div class="tarjeta-tiempo">
+
+                        <span>
+                            🌙 5 de junio de 2026
+                        </span>
+
+                        <h3>
+                            Primer mes
+                        </h3>
+
+                        <p>
+                            Un mes lleno de nuevos recuerdos.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- 5 DE JULIO -->
+
+            <div class="momento">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('julio')"
+                >
+
+                    <div class="punto">
+                        ♡
+                    </div>
+
+                    <div class="tarjeta-tiempo">
+
+                        <span>
+                            ⭐ 5 de julio de 2026
+                        </span>
+
+                        <h3>
+                            Segundo mes
+                        </h3>
+
+                        <p>
+                            Y nuestra historia seguía creciendo.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- 5 DE AGOSTO -->
+
+            <div class="momento">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('agosto')"
+                >
+
+                    <div class="punto">
+                        ♡
+                    </div>
+
+                    <div class="tarjeta-tiempo">
+
+                        <span>
+                            ✨ 5 de agosto de 2026
+                        </span>
+
+                        <h3>
+                            Tercer mes
+                        </h3>
+
+                        <p>
+                            Otro capítulo lleno de momentos especiales.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- 5 DE SEPTIEMBRE -->
+
+            <div class="momento">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('septiembre')"
+                >
+
+                    <div class="punto">
+                        ♡
+                    </div>
+
+                    <div class="tarjeta-tiempo">
+
+                        <span>
+                            🌙 5 de septiembre de 2026
+                        </span>
+
+                        <h3>
+                            Cuarto mes
+                        </h3>
+
+                        <p>
+                            Cuatro meses de recuerdos juntos.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- 5 DE OCTUBRE -->
+
+            <div class="momento ultimo">
+
+                <button
+                    class="boton-momento"
+                    onclick="mostrarRecuerdos('octubre')"
+                >
+
+                    <div class="punto">
+                        ♥
+                    </div>
+
+                    <div class="tarjeta-tiempo especial">
+
+                        <span>
+                            💙 5 de octubre de 2026
+                        </span>
+
+                        <h3>
+                            Quinto mes
+                        </h3>
+
+                        <p>
+                            Y aquí estamos, celebrando otro mes
+                            de nuestra historia.
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             AQUÍ APARECERÁN LAS FOTOS
+        ====================================== -->
+
+        <div
+            id="recuerdos-momento"
+            class="recuerdos-momento oculto"
+        >
+
+            <div class="titulo-recuerdos">
+
+                <span>✦</span>
+
+                <h3 id="titulo-recuerdo">
+                    Nuestros recuerdos
+                </h3>
+
+                <span>✦</span>
+
+            </div>
+
+
+            <div
+                id="galeria-momento"
+                class="galeria-momento"
+            >
+            </div>
+
+
+            <button
+                class="cerrar-recuerdos"
+                onclick="cerrarRecuerdos()"
+            >
+                Cerrar recuerdos ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VIDEO
+    ========================================== -->
+
+    <section
+        id="video"
+        class="seccion oculto"
+    >
+
+        <div class="titulo-seccion">
+
+            <span>✦</span>
+
+            <h2>
+                Video
+            </h2>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <p class="descripcion">
+
+            También preparé este pequeño video para ti. 🎬💙
+
+        </p>
+
+
+        <div class="video-contenedor">
+
+            <video controls>
+
+                <source
+                    src="video/recuerdos1.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ESCRÍBEME ALGO BONITO
+    ========================================== -->
+
+    <section
+        id="mensaje"
+        class="seccion oculto"
+    >
+
+        <div class="titulo-seccion">
+
+            <span>✦</span>
+
+            <h2>
+                Escríbeme algo bonito
+            </h2>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <div class="mensaje-caja">
+
+            <div class="corazon-mensaje">
+                ♡
+            </div>
+
+
+            <textarea
+                id="mensajeWhatsapp"
+                placeholder="Escribe aquí algo bonito... 💙"
+                maxlength="500"
+            ></textarea>
+
+
+            <button
+                class="boton-whatsapp"
+                onclick="enviarWhatsApp()"
+            >
+                💚 Enviar por WhatsApp
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FINAL
+    ========================================== -->
+
+    <footer>
+
+        <div class="estrellita">
+            ✦
+        </div>
+
+        <p>
+            Hecho con mucho cariño 💙
+        </p>
+
+        <span>
+            Nuestra historia continúa...
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
